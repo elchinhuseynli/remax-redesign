@@ -1,0 +1,53 @@
+&:root {
+  --remax-red: #e11b2c;
+}
+
+.span-red {
+  color: var(--remax-red);
+}
+
+.hero-words {
+  height: 4rem;
+  overflow: hidden;
+  line-height: 1em;
+}
+
+.is-hero-words {
+  /* display: flex;
+  align-items: center;
+  justify-content: center; */
+  font-size: 1em;
+  text-align: center;
+  color: var(--remax-red);
+}
+
+.services_link-inner {
+  overflow: hidden;
+}
+
+.services_p {
+  opacity: 0;
+  transform: translate(20px, 30px);
+  transition: all 0.3s ease-in-out;
+}
+
+.services_title {
+  transform: scale(0.9);
+  transition: all 0.3s ease-in-out;
+  font-size: 3rem;
+}
+
+.services_link-inner:hover .services_p {
+  transform: translate(0, 0);
+  opacity: 1;
+}
+
+.services_link-inner:hover .services_title {
+  transform: scale(1.1);
+  transform: translateX(10%);
+}
+
+.teams-card_image {
+  aspect-ratio: 3/5;
+  /* height: 390px; */
+}
