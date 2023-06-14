@@ -5,6 +5,7 @@ import 'swiper/css';
 import 'swiper/css/navigation';
 import 'swiper/css/pagination';
 
+import { CountUp } from 'countup.js';
 import { gsap } from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import Swiper, { Autoplay, Grid, Navigation, Pagination } from 'swiper';
@@ -133,6 +134,47 @@ gsap.from('.teams-card', {
   scrollTrigger: {
     trigger: '.swiper-slide.is-teams-slide',
     start: 'top 50%',
+    end: 'bottom 50%',
+    toggleActions: 'play none none reverse',
+  },
+});
+
+// Get all elements with the class 'stats_block-number'
+const statBlocks = document.querySelectorAll('.stats_block-number');
+
+// Loop through each element
+statBlocks.forEach((block) => {
+  // Assert that block is an HTMLElement
+  const blockElement = block as HTMLElement;
+
+  // Get the number value of the block
+  const endValue = Number(blockElement.textContent);
+
+  // Create a new CountUp instance for the block
+
+  const countUp = new CountUp(blockElement, endValue, {
+    enableScrollSpy: true,
+    duration: 2,
+    scrollSpyDelay: 500,
+  });
+
+  // Start the count up animation
+  // countUp.start();
+});
+
+gsap.from('.stats_block', {
+  duration: 0.6,
+  autoAlpha: 0,
+  stagger: {
+    from: 'random',
+    amount: 0.5,
+  },
+  y: 30,
+  filter: 'blur(5px)',
+  ease: 'power2.inOut',
+  scrollTrigger: {
+    trigger: '.stats_block-number',
+    start: 'top 70%',
     end: 'bottom 50%',
     toggleActions: 'play none none reverse',
   },

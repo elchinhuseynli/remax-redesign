@@ -8,6 +8,12 @@ dependencies:
   '@finsweet/ts-utils':
     specifier: ^0.39.2
     version: 0.39.2
+  countup:
+    specifier: ^1.8.2
+    version: 1.8.2
+  countup.js:
+    specifier: ^2.6.2
+    version: 2.6.2
   gsap:
     specifier: ^3.12.1
     version: 3.12.1
@@ -999,6 +1005,14 @@ packages:
   /concat-map@0.0.1:
     resolution: {integrity: sha512-/Srv4dswyQNBfohGpz9o6Yb3Gz3SrUDqBH5rTuhGR7ahtlbYKnVxw2bCFMRljaA7EXHaXZ8wsHdodFvbkhKmqg==}
     dev: true
+
+  /countup.js@2.6.2:
+    resolution: {integrity: sha512-PRvoilkebwr1MKaRAllyJl2cD7mgunGZWXLaSFL+YqHXlJpjLX7SHTWonRfIx2xg1Xf7SPbo92bOOonSIomRYQ==}
+    dev: false
+
+  /countup@1.8.2:
+    resolution: {integrity: sha512-1qOuy+h+dgLY4TroLb4ZC2hK7HYS2Z7mnSUvdzoYAU7EZbqOse1mKZta/KYPhDPfd9lPDyP3Tb4pH6a10RkoCw==}
+    dev: false
 
   /cross-env@7.0.3:
     resolution: {integrity: sha512-+/HKd6EgcQCJGh2PSjZuUitQBQynKor4wrFbRg4DtAgS1aWO+gU52xpH7M9ScGgXSYmAVS9bIJ8EzuaGw0oNAw==}
