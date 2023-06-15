@@ -1,9 +1,23 @@
 &:root {
   --remax-red: #e11b2c;
+  --remax-blue: #0b3696;
 }
 
+/* body {
+  background-color: white;
+  color: var(--remax-blue);
+}
 .span-red {
   color: var(--remax-red);
+} */
+
+h2,
+h3,
+h4,
+h5,
+h6,
+paragraph {
+  text-wrap: balance;
 }
 
 .hero-words {
@@ -58,7 +72,7 @@
 }
 
 .stats_block:hover {
-  background-color: var(--remax-red);
+  background-color: var(--remax-blue);
   grid-template-rows: 1fr 0.5fr;
 }
 
@@ -68,4 +82,14 @@
 
 .stats_block:hover .stats_block-bottom {
   opacity: 1;
+}
+
+.button,
+.listing-slider_arrow {
+  transition: transform 0.25s ease-in-out;
+}
+
+.button:hover,
+.listing-slider_arrow:hover {
+  transform: scale(1.1);
 }

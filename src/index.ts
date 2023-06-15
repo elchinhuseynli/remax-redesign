@@ -64,7 +64,7 @@ const heroSubWords = new Swiper('.hero-sub-words', {
 
 const team = new Swiper('[data-slider-team]', {
   slidesPerView: 1.3,
-  spaceBetween: 20,
+  spaceBetween: '30',
   modules: [Navigation, Pagination, Autoplay, Grid],
 
   breakpoints: {
@@ -157,9 +157,6 @@ statBlocks.forEach((block) => {
     duration: 2,
     scrollSpyDelay: 500,
   });
-
-  // Start the count up animation
-  // countUp.start();
 });
 
 gsap.from('.stats_block', {
@@ -178,4 +175,44 @@ gsap.from('.stats_block', {
     end: 'bottom 50%',
     toggleActions: 'play none none reverse',
   },
+});
+
+const bloglistSlder = new Swiper('[data-slider-bloglist]', {
+  slidesPerView: 3.5,
+  spaceBetween: 30,
+  grabCursor: true,
+  autoplay: {
+    delay: 1500,
+    disableOnInteraction: false,
+  },
+  loop: true,
+  navigation: {
+    nextEl: '[data-bloglist-slider="next"]',
+    prevEl: '[data-bloglist-slider="prev"]',
+  },
+  modules: [Navigation, Pagination, Autoplay],
+});
+
+// scale .listing_image on hover and scale back on mouseleave using gsap
+
+const listingImage = document.querySelectorAll('.listing_image');
+
+listingImage.forEach((el) => {
+  const listingImageElement = el as HTMLElement;
+
+  listingImageElement.addEventListener('mouseenter', () => {
+    gsap.to(listingImageElement, {
+      duration: 0.6,
+      scale: 1.1,
+      ease: 'power2.inOut',
+    });
+  });
+
+  listingImageElement.addEventListener('mouseleave', () => {
+    gsap.to(listingImageElement, {
+      duration: 0.6,
+      scale: 1,
+      ease: 'power2.inOut',
+    });
+  });
 });
