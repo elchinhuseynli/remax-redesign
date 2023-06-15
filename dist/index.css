@@ -59,6 +59,19 @@
 .listing-slider_arrow:hover {
   transform: scale(1.1);
 }
+.listing_image {
+  transition: all 0.7s ease-in-out;
+}
+.listing_item:hover .listing_image {
+  width: 110%;
+  height: 110%;
+}
+.listing_item_meta {
+  transition: opacity 0.3s ease-in-out;
+}
+.listim_item:hover .listing_item_meta {
+  opacity: 0.6;
+}
 
 /* node_modules/.pnpm/swiper@9.4.1/node_modules/swiper/swiper.min.css */
 @font-face {

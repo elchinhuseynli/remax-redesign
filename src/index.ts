@@ -193,26 +193,20 @@ const bloglistSlder = new Swiper('[data-slider-bloglist]', {
   modules: [Navigation, Pagination, Autoplay],
 });
 
-// scale .listing_image on hover and scale back on mouseleave using gsap
-
-const listingImage = document.querySelectorAll('.listing_image');
-
-listingImage.forEach((el) => {
-  const listingImageElement = el as HTMLElement;
-
-  listingImageElement.addEventListener('mouseenter', () => {
-    gsap.to(listingImageElement, {
-      duration: 0.6,
-      scale: 1.1,
-      ease: 'power2.inOut',
-    });
-  });
-
-  listingImageElement.addEventListener('mouseleave', () => {
-    gsap.to(listingImageElement, {
-      duration: 0.6,
-      scale: 1,
-      ease: 'power2.inOut',
-    });
-  });
-});
+// on hover .listing_item scale .listing_image inside it and scale back on mouseleave using gsap
+// const listingItem = document.querySelectorAll('.listing_item');
+// listingItem.forEach((item) => {
+//   const listingImage = item.querySelector('.listing_image');
+//   item.addEventListener('mouseenter', () => {
+//     gsap.to(listingImage, {
+//       scale: 1.1,
+//       duration: 0.7,
+//     });
+//   });
+//   item.addEventListener('mouseleave', () => {
+//     gsap.to(listingImage, {
+//       scale: 1,
+//       duration: 0.4,
+//     });
+//   });
+// });

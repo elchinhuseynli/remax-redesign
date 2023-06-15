@@ -11738,24 +11738,6 @@
     },
     modules: [Navigation, Pagination, Autoplay]
   });
-  var listingImage = document.querySelectorAll(".listing_image");
-  listingImage.forEach((el) => {
-    const listingImageElement = el;
-    listingImageElement.addEventListener("mouseenter", () => {
-      gsapWithCSS.to(listingImageElement, {
-        duration: 0.6,
-        scale: 1.1,
-        ease: "power2.inOut"
-      });
-    });
-    listingImageElement.addEventListener("mouseleave", () => {
-      gsapWithCSS.to(listingImageElement, {
-        duration: 0.6,
-        scale: 1,
-        ease: "power2.inOut"
-      });
-    });
-  });
 })();
 /*! Bundled license information:
 
