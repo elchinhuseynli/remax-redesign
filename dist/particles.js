@@ -1,1 +1,137 @@
-"use strict";(()=>{particlesJS("particles-js",{particles:{number:{value:8,density:{enable:!0,value_area:1800}},color:{value:["#dc1c2e","#0b3696"]},shape:{type:"circle",stroke:{width:0,color:"transparent"},polygon:{nb_sides:3}},opacity:{value:.5,random:!1,anim:{enable:!0,speed:1,opacity_min:.1,sync:!0}},size:{value:19.728691040806815,random:!0,anim:{enable:!0,speed:9.59040959040959,size_min:.1,sync:!1}},line_linked:{enable:!1,distance:150,color:"#ffffff",opacity:.4,width:1},move:{enable:!0,speed:1,direction:"none",random:!1,straight:!1,out_mode:"out",bounce:!1,attract:{enable:!1,rotateX:600,rotateY:1200}}},interactivity:{detect_on:"window",events:{onhover:{enable:!0,mode:"bubble"},onclick:{enable:!0,mode:"push"},resize:!0},modes:{grab:{distance:200,line_linked:{opacity:1}},bubble:{distance:200,size:40,duration:10,opacity:8,speed:2},repulse:{distance:200,duration:.4},push:{particles_nb:4},remove:{particles_nb:2}}},retina_detect:!0});var a,e,t;e=new Stats;e.setMode(0);e.domElement.style.position="absolute";e.domElement.style.left="0px";e.domElement.style.top="0px";document.body.appendChild(e.domElement);a=document.querySelector(".js-count-particles");t=function(){e.begin(),e.end(),window.pJSDom[0].pJS.particles&&window.pJSDom[0].pJS.particles.array&&(a.innerText=window.pJSDom[0].pJS.particles.array.length),requestAnimationFrame(t)};requestAnimationFrame(t);})();
+"use strict";
+(() => {
+  // bin/live-reload.js
+  new EventSource(`${"http://localhost:3000"}/esbuild`).addEventListener("change", () => location.reload());
+
+  // src/particles.js
+  particlesJS("particles-js", {
+    particles: {
+      number: {
+        value: 8,
+        density: {
+          enable: true,
+          value_area: 1800
+        }
+      },
+      color: {
+        value: ["#dc1c2e", "#0b3696"]
+      },
+      shape: {
+        type: "circle",
+        stroke: {
+          width: 0,
+          color: "transparent"
+        },
+        polygon: {
+          nb_sides: 3
+        }
+        // image: {
+        //   src: 'img/github.svg',
+        //   width: 100,
+        //   height: 100,
+        // },
+      },
+      opacity: {
+        value: 0.5,
+        random: false,
+        anim: {
+          enable: true,
+          speed: 1,
+          opacity_min: 0.1,
+          sync: true
+        }
+      },
+      size: {
+        value: 19.728691040806815,
+        random: true,
+        anim: {
+          enable: true,
+          speed: 9.59040959040959,
+          size_min: 0.1,
+          sync: false
+        }
+      },
+      line_linked: {
+        enable: false,
+        distance: 150,
+        color: "#ffffff",
+        opacity: 0.4,
+        width: 1
+      },
+      move: {
+        enable: true,
+        speed: 1,
+        direction: "none",
+        random: false,
+        straight: false,
+        out_mode: "out",
+        bounce: false,
+        attract: {
+          enable: false,
+          rotateX: 600,
+          rotateY: 1200
+        }
+      }
+    },
+    interactivity: {
+      detect_on: "window",
+      events: {
+        onhover: {
+          enable: true,
+          mode: "bubble"
+        },
+        onclick: {
+          enable: true,
+          mode: "push"
+        },
+        resize: true
+      },
+      modes: {
+        grab: {
+          distance: 200,
+          line_linked: {
+            opacity: 1
+          }
+        },
+        bubble: {
+          distance: 200,
+          size: 40,
+          duration: 10,
+          opacity: 8,
+          speed: 2
+        },
+        repulse: {
+          distance: 200,
+          duration: 0.4
+        },
+        push: {
+          particles_nb: 4
+        },
+        remove: {
+          particles_nb: 2
+        }
+      }
+    },
+    retina_detect: true
+  });
+  var count_particles;
+  var stats;
+  var update;
+  stats = new Stats();
+  stats.setMode(0);
+  stats.domElement.style.position = "absolute";
+  stats.domElement.style.left = "0px";
+  stats.domElement.style.top = "0px";
+  document.body.appendChild(stats.domElement);
+  count_particles = document.querySelector(".js-count-particles");
+  update = function() {
+    stats.begin();
+    stats.end();
+    if (window.pJSDom[0].pJS.particles && window.pJSDom[0].pJS.particles.array) {
+      count_particles.innerText = window.pJSDom[0].pJS.particles.array.length;
+    }
+    requestAnimationFrame(update);
+  };
+  requestAnimationFrame(update);
+})();
+//# sourceMappingURL=particles.js.map
