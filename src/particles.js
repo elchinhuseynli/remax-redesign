@@ -17,7 +17,7 @@ particlesJS('particles-js', {
         color: 'transparent',
       },
       polygon: {
-        nb_sides: 3,
+        nb_sides: 10,
       },
       // image: {
       //   src: 'img/github.svg',
@@ -36,7 +36,7 @@ particlesJS('particles-js', {
       },
     },
     size: {
-      value: 19.728691040806815,
+      value: 15,
       random: true,
       anim: {
         enable: true,
@@ -89,10 +89,10 @@ particlesJS('particles-js', {
       },
       bubble: {
         distance: 200,
-        size: 40,
-        duration: 10,
-        opacity: 8,
-        speed: 2,
+        size: 35,
+        duration: 2,
+        opacity: 10,
+        speed: 10,
       },
       repulse: {
         distance: 200,
