@@ -3,6 +3,9 @@
   --remax-blue: #0b3696;
 }
 
+.span-red:hover {
+  color: var(--remax-red);
+}
 /* body {
   background-color: white;
   color: var(--remax-blue);
@@ -103,9 +106,26 @@ paragraph {
 }
 
 .listing_item_meta {
-  transition: opacity 0.3s ease-in-out;
+  transition: opacity 0.5s ease-in-out;
 }
 
 .listing_item:hover .listing_item_meta {
-  opacity: 0.6;
+  opacity: 0;
+}
+.listing_item_image-overlay {
+  transition: opacity 0.3s ease-in-out;
+}
+
+.listing_item:hover .listing_item_image-overlay {
+  opacity: 0;
+}
+
+.swiper-container.hero-words {
+  display: inline-block;
+  font-size: 3.5rem;
+  transform: translateY(1rem);
+}
+
+.swiper-wrapper.is-hero-words-wrapper > div {
+  text-align: left;
 }

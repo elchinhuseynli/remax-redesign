@@ -9,6 +9,7 @@ import { CountUp } from 'countup.js';
 import { gsap } from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import Swiper, { Autoplay, Grid, Navigation, Pagination } from 'swiper';
+
 gsap.registerPlugin(ScrollTrigger);
 
 // eslint-disable-next-line @typescript-eslint/no-unused-vars
@@ -39,10 +40,10 @@ const heroWords = new Swiper('.hero-words', {
   slidesPerView: 1,
   // spaceBetween: 30,
   mousewheel: true,
-  speed: 1000,
+  speed: 1200,
   loop: true,
   autoplay: {
-    delay: 1500,
+    delay: 2500,
     disableOnInteraction: false,
   },
   modules: [Autoplay],

@@ -11603,10 +11603,10 @@
     slidesPerView: 1,
     // spaceBetween: 30,
     mousewheel: true,
-    speed: 1e3,
+    speed: 1200,
     loop: true,
     autoplay: {
-      delay: 1500,
+      delay: 2500,
       disableOnInteraction: false
     },
     modules: [Autoplay]
