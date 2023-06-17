@@ -19,11 +19,11 @@ particlesJS('particles-js', {
       polygon: {
         nb_sides: 10,
       },
-      // image: {
-      //   src: 'img/github.svg',
-      //   width: 100,
-      //   height: 100,
-      // },
+      image: {
+        src: 'https://uploads-ssl.webflow.com/64885b92cc3ed80088e8bcca/64885e7cbe47a3c245d241fb_Remax%20Icon%20webclip.png',
+        width: 100,
+        height: 100,
+      },
     },
     opacity: {
       value: 0.5,
