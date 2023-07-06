@@ -11,7 +11,7 @@ particlesJS('particles-js', {
       value: ['#dc1c2e', '#0b3696'],
     },
     shape: {
-      type: 'circle',
+      type: 'image',
       stroke: {
         width: 0,
         color: 'transparent',
@@ -26,7 +26,7 @@ particlesJS('particles-js', {
       },
     },
     opacity: {
-      value: 0.5,
+      value: 0.2,
       random: false,
       anim: {
         enable: true,
@@ -48,7 +48,7 @@ particlesJS('particles-js', {
     line_linked: {
       enable: false,
       distance: 150,
-      color: '#ffffff',
+      color: '#0b3696',
       opacity: 0.4,
       width: 1,
     },
