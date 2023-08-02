@@ -14,7 +14,10 @@ function updatePriceAndCurrency() {
     if (elem.textContent.toLowerCase() === 'czk') {
       elem.textContent = 'Kč';
     }
-    // if the currency is 'eur' or anything else, we leave it as is.
+    // if the currency is 'eur' then make it ll caps
+    if (elem.textContent.toLowerCase() === 'eur') {
+      elem.textContent = 'EUR';
+    }
   });
 }
 

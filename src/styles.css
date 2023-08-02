@@ -64,11 +64,6 @@ paragraph {
   transform: translateX(10%);
 }
 
-.teams-card_image {
-  aspect-ratio: 3/5;
-  /* height: 390px; */
-}
-
 .stats_block {
   grid-template-rows: 1fr 0fr;
   transition: grid-template-rows 0.3s ease-in-out;
@@ -128,4 +123,9 @@ paragraph {
 
 .swiper-wrapper.is-hero-words-wrapper > div {
   text-align: left;
+}
+
+.swiper-button-disabled {
+  opacity: 0.2;
+  pointer-events: none;
 }

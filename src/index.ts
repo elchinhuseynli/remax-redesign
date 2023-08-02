@@ -12,6 +12,35 @@ import Swiper, { Autoplay, Grid, Navigation, Pagination } from 'swiper';
 
 gsap.registerPlugin(ScrollTrigger);
 
+function formatToCzech(number: number): string {
+  return new Intl.NumberFormat('cs-CZ').format(number);
+}
+
+function updatePriceAndCurrency(): void {
+  const priceElements = document.querySelectorAll<HTMLElement>('[data-text="price"]');
+  priceElements.forEach((elem) => {
+    // eslint-disable-next-line @typescript-eslint/no-non-null-assertion
+    const price = parseFloat(elem.textContent!.replace(/\s/g, ''));
+    elem.textContent = formatToCzech(price);
+  });
+
+  const currencyElements = document.querySelectorAll<HTMLElement>('[data-text="currency"]');
+  currencyElements.forEach((elem) => {
+    // eslint-disable-next-line @typescript-eslint/no-non-null-assertion
+    if (elem.textContent!.toLowerCase() === 'czk') {
+      elem.textContent = 'Kč';
+    }
+    // if the currency is 'eur' then make it all caps
+    // eslint-disable-next-line @typescript-eslint/no-non-null-assertion
+    if (elem.textContent!.toLowerCase() === 'eur') {
+      elem.textContent = 'EUR';
+    }
+  });
+}
+
+// Call the function initially
+updatePriceAndCurrency();
+
 // eslint-disable-next-line @typescript-eslint/no-unused-vars
 const listingSlider = new Swiper('.listing-slider', {
   slidesPerView: 3.5,
@@ -21,6 +50,7 @@ const listingSlider = new Swiper('.listing-slider', {
   navigation: {
     nextEl: '[data-listing-slider="next"]',
     prevEl: '[data-listing-slider="prev"]',
+    disabledClass: 'swiper-button-disabled',
   },
   modules: [Navigation, Pagination],
 });
@@ -47,26 +77,31 @@ const heroWords = new Swiper('.hero-words', {
     disableOnInteraction: false,
   },
   modules: [Autoplay],
+  grabCursor: true,
 });
 
-const heroSubWords = new Swiper('.hero-sub-words', {
-  direction: 'vertical',
-  slidesPerView: 1,
-  // spaceBetween: 30,
-  mousewheel: true,
-  speed: 1000,
-  loop: true,
-  autoplay: {
-    delay: 1500,
-    disableOnInteraction: false,
-  },
-  modules: [Autoplay],
-});
+// const heroSubWords = new Swiper('.hero-sub-words', {
+//   direction: 'vertical',
+//   slidesPerView: 1,
+//   // spaceBetween: 30,
+//   mousewheel: true,
+//   speed: 1000,
+//   loop: true,
+//   autoplay: {
+//     delay: 1500,
+//     disableOnInteraction: false,
+//   },
+//   modules: [Autoplay],
+// });
 
 const team = new Swiper('[data-slider-team]', {
   slidesPerView: 1.3,
   spaceBetween: '30',
   modules: [Navigation, Pagination, Autoplay, Grid],
+  navigation: {
+    nextEl: '[data-team-slider="next"]',
+    prevEl: '[data-team-slider="prev"]',
+  },
 
   breakpoints: {
     // when window width is >= 320px
@@ -186,28 +221,10 @@ const bloglistSlder = new Swiper('[data-slider-bloglist]', {
     delay: 1500,
     disableOnInteraction: false,
   },
-  loop: true,
   navigation: {
     nextEl: '[data-bloglist-slider="next"]',
     prevEl: '[data-bloglist-slider="prev"]',
+    disabledClass: 'swiper-button-disabled',
   },
   modules: [Navigation, Pagination, Autoplay],
 });
-
-// on hover .listing_item scale .listing_image inside it and scale back on mouseleave using gsap
-// const listingItem = document.querySelectorAll('.listing_item');
-// listingItem.forEach((item) => {
-//   const listingImage = item.querySelector('.listing_image');
-//   item.addEventListener('mouseenter', () => {
-//     gsap.to(listingImage, {
-//       scale: 1.1,
-//       duration: 0.7,
-//     });
-//   });
-//   item.addEventListener('mouseleave', () => {
-//     gsap.to(listingImage, {
-//       scale: 1,
-//       duration: 0.4,
-//     });
-//   });
-// });

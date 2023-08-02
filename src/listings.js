@@ -1,4 +1,4 @@
-// format price to czec
+// format price to czech
 
 function formatToCzech(number) {
   return new Intl.NumberFormat('cs-CZ').format(number);
@@ -25,13 +25,13 @@ const children = parent ? parent.querySelectorAll('.w-inline-block.w-lightbox') 
 // gallery list modification
 if (children) {
   if (children.length > 0) {
-    parent.removeChild(children[0]); // Removing the first child element
+    children[0].style.display = 'none'; // Hiding the first child element
   }
   for (let i = 1; i < children.length; i++) {
     // Start from the second child element
     if (i >= 5) {
-      // remove the element itself from the document
-      parent.removeChild(children[i]);
+      // hide the element instead of removing it from the document
+      children[i].style.display = 'none';
     }
   }
 }
